@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trabalho IHC</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/Site.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center" onclick="leuQr();">
+            <video autoplay></video>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    ///Iniciar verificação de câmera junto com a página
+    window.onload = AbrirCamera();
+
+    ///Gravar QR Code
+    function leuQr() {
+        GravarLogin();
+        window.location.href = "Pedido.html";
+    }
+
+</script>
