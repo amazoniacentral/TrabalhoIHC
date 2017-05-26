@@ -1,4 +1,8 @@
-﻿video{
+﻿body{
+    background-color:#e6e6e6;
+}
+
+video{
     /*Ajustar tamanho do vídeo da câmera automático*/
     width:100%;
     height:auto;

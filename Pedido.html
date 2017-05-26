@@ -7,7 +7,7 @@
     <link href="Content/Site.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/Site.js"></script>
+    <script src="Scripts/Site.js"></script>    
 </head>
 <body>
     <div class="container">        
@@ -15,10 +15,94 @@
         <div class="pull-right">
             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Finalizar pedido</button>
         </div>
-        Forma de pagamento: <span class="text-danger" id="forma"></span>
+        <span id ="forma"></span>
+    </div>
+    <div class="container">
+        <div class="col-md-8 col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <legend class="text-center">CARDÁPIO</legend>
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                        <b>Selecione </b>um tipo
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <select class="form-control">
+                            <option>Refeição</option>
+                            <option>Bebidas</option>
+                            <option>Lanche</option>
+                        </select>
+                    </div>  
+                    <div id="1">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="panel panel-default">
+                                <a href="Detalhes.html">
+                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
+                                </a>
+                                <div class="panel-body">
+                                    <p>
+                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
+                                    </p>
+                                    Descrição mínima do prato com algo que chame a atenção do cliente
+                                    <div>
+                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <div class="pull-right">
+                                            <span class="h3">R$ 23,42</span>
+                                            <span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star-empty"></span>
+                                                <span class="glyphicon glyphicon-star-empty"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <legend>
+                        <span>PEDIDO</span>
+                        <span class="pull-right" id="valor"></span>
+                    </legend>
+                    <div id="listaPedido"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
+
+<script>
+    window.onload = lerPagina();
+    function lerPagina() {
+        AcessoRestrito();
+        getFormaDePagamento();
+        document.getElementById('listaPedido').innerHTML = CarregarPedido();
+    }
+
+    function getFormaDePagamento() {
+        document.getElementById('valor').innerHTML = CalcularValor();
+        var m = sessionStorage.getItem('forma');
+        if (m != null) {
+            document.getElementById('forma').innerHTML = "Forma de pagamento: <span class='text-danger'>" + m + "</span>";
+        }        
+    }
+
+    function pagamento(i) {
+        sessionStorage.setItem('forma', i);
+        getFormaDePagamento();
+        //window.location.href = "Pedido.html";
+    }
+</script>
+
+
 
 
 
@@ -42,25 +126,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-
+                
             </div>
         </div>
 
     </div>
 </div>
 
-<script>
-    window.onload = getFormaDePagamento();
-
-        function getFormaDePagamento()
-        {
-            document.getElementById('forma').innerHTML = sessionStorage.getItem('forma');
-        }
-
-    function pagamento(i)
-    {
-        sessionStorage.setItem('forma', i);
-        document.getElementById('forma').innerHTML = i;
-        //window.location.href = "Pedido.html";
-    }
-</script>
