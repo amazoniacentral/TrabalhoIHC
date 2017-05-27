@@ -26,10 +26,10 @@
                         <b>Selecione </b>um tipo
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <select class="form-control">
-                            <option>Refeição</option>
-                            <option>Bebidas</option>
-                            <option>Lanche</option>
+                        <select onchange="selecionarOpcao($(this).val())" class="form-control">
+                            <option value="1">Refeição</option>
+                            <option value="2">Bebidas</option>
+                            <option value="3">Lanche</option>
                         </select>
                     </div>  
                     <div class="col-md-12 row" id="refeicao">
@@ -41,11 +41,11 @@
                                 </a>
                                 <div class="panel-body">
                                     <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
+                                        <a href="Detalhes.html" class="h4">Serve service</a>
                                     </p>
                                     Descrição mínima do prato com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="SelecionarPeido('Serve service','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 23,42</span>
                                             <span>
@@ -67,11 +67,11 @@
                                 </a>
                                 <div class="panel-body">
                                     <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
+                                        <a href="Detalhes.html" class="h4">Serve service</a>
                                     </p>
                                     Descrição mínima do prato com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="SelecionarPeido('Serve service','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 23,42</span>
                                             <span>
@@ -93,63 +93,11 @@
                                 </a>
                                 <div class="panel-body">
                                     <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
+                                        <a href="Detalhes.html" class="h4">Serve service</a>
                                     </p>
                                     Descrição mínima do prato com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
-                                        <div class="pull-right">
-                                            <span class="h3">R$ 23,42</span>
-                                            <span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star-empty"></span>
-                                                <span class="glyphicon glyphicon-star-empty"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="panel panel-default">
-                                <a href="Detalhes.html">
-                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
-                                </a>
-                                <div class="panel-body">
-                                    <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
-                                    </p>
-                                    Descrição mínima do prato com algo que chame a atenção do cliente
-                                    <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
-                                        <div class="pull-right">
-                                            <span class="h3">R$ 23,42</span>
-                                            <span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star-empty"></span>
-                                                <span class="glyphicon glyphicon-star-empty"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="panel panel-default">
-                                <a href="Detalhes.html">
-                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
-                                </a>
-                                <div class="panel-body">
-                                    <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
-                                    </p>
-                                    Descrição mínima do prato com algo que chame a atenção do cliente
-                                    <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="SelecionarPeido('Serve service','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 23,42</span>
                                             <span>
@@ -170,17 +118,17 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="panel panel-default">
                                 <a href="Detalhes.html">
-                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
+                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/cocacolalata.jpg" />
                                 </a>
                                 <div class="panel-body">
                                     <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
+                                        <a href="Detalhes.html" class="h4">Coca-cola</a>
                                     </p>
                                     Descrição mínima do prato com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="SelecionarPeido('Coca-cola','3.45', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
-                                            <span class="h3">R$ 23,42</span>
+                                            <span class="h3">R$ 3,45</span>
                                             <span>
                                                 <span class="glyphicon glyphicon-star"></span>
                                                 <span class="glyphicon glyphicon-star"></span>
@@ -196,17 +144,17 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="panel panel-default">
                                 <a href="Detalhes.html">
-                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
+                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/cocacolalata.jpg" />
                                 </a>
                                 <div class="panel-body">
                                     <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
+                                        <a href="Detalhes.html" class="h4">Coca-cola</a>
                                     </p>
                                     Descrição mínima do prato com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="SelecionarPeido('Coca-cola','3.45', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
-                                            <span class="h3">R$ 23,42</span>
+                                            <span class="h3">R$ 3,45</span>
                                             <span>
                                                 <span class="glyphicon glyphicon-star"></span>
                                                 <span class="glyphicon glyphicon-star"></span>
@@ -222,17 +170,69 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="panel panel-default">
                                 <a href="Detalhes.html">
-                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
+                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/cocacolalata.jpg" />
                                 </a>
                                 <div class="panel-body">
                                     <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
+                                        <a href="Detalhes.html" class="h4">Coca-cola</a>
                                     </p>
                                     Descrição mínima do prato com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="SelecionarPeido('Coca-cola','3.45', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
-                                            <span class="h3">R$ 23,42</span>
+                                            <span class="h3">R$ 3,45</span>
+                                            <span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star-empty"></span>
+                                                <span class="glyphicon glyphicon-star-empty"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="panel panel-default">
+                                <a href="Detalhes.html">
+                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/cocacolalata.jpg" />
+                                </a>
+                                <div class="panel-body">
+                                    <p>
+                                        <a href="Detalhes.html" class="h4">Coca-cola</a>
+                                    </p>
+                                    Descrição mínima do prato com algo que chame a atenção do cliente
+                                    <div>
+                                        <button onclick="SelecionarPeido('Coca-cola','3.45', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <div class="pull-right">
+                                            <span class="h3">R$ 3,45</span>
+                                            <span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star-empty"></span>
+                                                <span class="glyphicon glyphicon-star-empty"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="panel panel-default">
+                                <a href="Detalhes.html">
+                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/cocacolalata.jpg" />
+                                </a>
+                                <div class="panel-body">
+                                    <p>
+                                        <a href="Detalhes.html" class="h4">Coca-cola</a>
+                                    </p>
+                                    Descrição mínima do prato com algo que chame a atenção do cliente
+                                    <div>
+                                        <button onclick="SelecionarPeido('Coca-cola','3.45', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <div class="pull-right">
+                                            <span class="h3">R$ 3,45</span>
                                             <span>
                                                 <span class="glyphicon glyphicon-star"></span>
                                                 <span class="glyphicon glyphicon-star"></span>
@@ -251,17 +251,17 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="panel panel-default">
                                 <a href="Detalhes.html">
-                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
+                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/lanche.jpg" />
                                 </a>
                                 <div class="panel-body">
                                     <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
+                                        <a href="Detalhes.html" class="h4">Hamburger</a>
                                     </p>
                                     Descrição mínima do prato com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="SelecionarPeido('Hamburger','13.56', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
-                                            <span class="h3">R$ 23,42</span>
+                                            <span class="h3">R$ 13,56</span>
                                             <span>
                                                 <span class="glyphicon glyphicon-star"></span>
                                                 <span class="glyphicon glyphicon-star"></span>
@@ -277,17 +277,17 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="panel panel-default">
                                 <a href="Detalhes.html">
-                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
+                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/lanche.jpg" />
                                 </a>
                                 <div class="panel-body">
                                     <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
+                                        <a href="Detalhes.html" class="h4">Hamburger</a>
                                     </p>
                                     Descrição mínima do prato com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="SelecionarPeido('Hamburger','13.56', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
-                                            <span class="h3">R$ 23,42</span>
+                                            <span class="h3">R$ 13,56</span>
                                             <span>
                                                 <span class="glyphicon glyphicon-star"></span>
                                                 <span class="glyphicon glyphicon-star"></span>
@@ -299,59 +299,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="panel panel-default">
-                                <a href="Detalhes.html">
-                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
-                                </a>
-                                <div class="panel-body">
-                                    <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
-                                    </p>
-                                    Descrição mínima do prato com algo que chame a atenção do cliente
-                                    <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
-                                        <div class="pull-right">
-                                            <span class="h3">R$ 23,42</span>
-                                            <span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star-empty"></span>
-                                                <span class="glyphicon glyphicon-star-empty"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="panel panel-default">
-                                <a href="Detalhes.html">
-                                    <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
-                                </a>
-                                <div class="panel-body">
-                                    <p>
-                                        <a href="Detalhes.html" class="h4">Nome do prato</a>
-                                    </p>
-                                    Descrição mínima do prato com algo que chame a atenção do cliente
-                                    <div>
-                                        <button onclick="SelecionarPeido('Arroz doce','23.42', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
-                                        <div class="pull-right">
-                                            <span class="h3">R$ 23,42</span>
-                                            <span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star"></span>
-                                                <span class="glyphicon glyphicon-star-empty"></span>
-                                                <span class="glyphicon glyphicon-star-empty"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div>  
                     </div>
                 </div>
             </div>
@@ -374,6 +322,7 @@
 <script>
     window.onload = lerPagina();
     function lerPagina() {
+        selecionarOpcao(1)
         AcessoRestrito();
         getFormaDePagamento();
         document.getElementById('listaPedido').innerHTML = CarregarPedido();
@@ -391,6 +340,28 @@
         sessionStorage.setItem('forma', i);
         getFormaDePagamento();
         //window.location.href = "Pedido.html";
+    }
+
+    function selecionarOpcao(id)
+    {
+        $("#refeicao").hide();
+        $("#bebidas").hide();
+        $("#lanches").hide();
+        if (id==1) {
+            $("#refeicao").show();
+        }
+        else
+        {
+            if (id==2) {
+                $("#bebidas").show();
+            }
+            else
+            {
+                if (id==3) {
+                    $("#lanches").show();
+                }
+            }
+        }
     }
 </script>
 
