@@ -69,7 +69,7 @@ function CarregarCarrinho()
     var list = "<ul  class='list-group text-center'><b>Nenhum</b> produto no carrinho</ul>";
     if (s!=null && s!="") {
         list = "<ul  class='list-group'>" + s + "</ul>";
-        $("#btnFinalizarPedido").html("<button onclick='$(valFinal).html(CalcularValor(listaCarrinho))' type='button' class='btn btn-success btn-lg btn-block' data-toggle='modal' data-target='#myModal'>Finalizar pedido</button>");
+        $("#btnFinalizarPedido").html("<button onclick='$(valFinal).html(CalcularValor(listaCarrinho))' type='button' class='btn btn-primary btn-lg btn-block' data-toggle='modal' data-target='#myModal'>Finalizar pedido</button>");
     }
     else {
         $("#btnFinalizarPedido").html(" ");
@@ -113,7 +113,7 @@ function getFormaPagamento()
     var valor = CalcularValor("#listaPedido");
     var m = sessionStorage.getItem('forma');
     if (m!=null) {
-        $("#formaPagamento").html("Forma de pagamento: <span class='text-danger'>" + m + "</span> " + valor);
+        $("#formaPagamento").html("Com <span class='text-danger'>" + m + "</span> " + valor);
     }    
 }
 
