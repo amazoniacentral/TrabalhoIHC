@@ -15,12 +15,12 @@
         <div class="col-md-8 col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <legend class="text-center">NOME DO PRODUTO</legend>
+                    <legend class="text-center">PRATO FEITO</legend>
                     <img style="max-height:350px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
                     <div class="panel-body">
-                        Descrição completa do produto bem detalhada com os ingredientes detalhando tudo que tem. texto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto textotexto textotextotexto texto texto texto
+                        Comercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto texto
                         <div class="pull-right">
-                            <span class="h2">R$ 23,42</span>
+                            <span class="h2">R$ 14,58</span>
                             <span>
                                 <span class="glyphicon glyphicon-star"></span>
                                 <span class="glyphicon glyphicon-star"></span>
@@ -31,7 +31,7 @@
                         </div>
                         <legend></legend>
                         <a href="Pedido.html">Voltar</a>
-                        <button type="button" class="btn btn-default pull-right">Pedir</button>
+                        <button onclick="AdicionarProduto('Prato feito',14.58)" type="button" class="btn btn-default pull-right">Pedir</button>
                     </div>
                 </div>
             </div>
@@ -40,9 +40,20 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <legend>
-                        <span>PEDIDO</span>
-                        <span class="pull-right" id="valor"></span>
+                        <span>CARRINHO</span>
+                        <span class="pull-right" id="valorCarrinho"></span>
                     </legend>
+                    <div id="btnFinalizarPedido"></div>
+                    <div id="listaCarrinho"></div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <legend>
+                        <span>PEDIDO</span>
+                        <span class="pull-right" id="valorPedido"></span>
+                    </legend>
+                    <div id="listaPedido"></div>
                 </div>
             </div>
         </div>
@@ -55,14 +66,11 @@
     function iniciar()
     {
         AcessoRestrito();
-        document.getElementById('valor').innerHTML = CalcularValor();
+        CarregarCarrinho();
+        CarregarPedido();
+        getFormaPagamento();
     }
 </script>
-
-
-
-
-
 
 
 <!-- Modal -->
@@ -77,9 +85,10 @@
             </div>
             <div class="modal-body">
                 <div class="text-center">
-                    <button type="button" data-dismiss="modal" onclick="pagamento('Dinheiro')" class="btn btn-default btn-lg">DINHEIRO</button>
-                    <button type="button" data-dismiss="modal" onclick="pagamento('Cartão de crédito')" class="btn btn-default btn-lg">CARTÃO DE CRÉDITO</button>
-                    <button type="button" data-dismiss="modal" onclick="pagamento('Cartão de débito')" class="btn btn-default btn-lg">CARTÃO DE DÉBITO</button>
+                    <p class="h3" id="valFinal">Valor final</p>
+                    <button type="button" data-dismiss="modal" onclick="FinalizarPedido('Dinheiro')" class="btn btn-default btn-lg">DINHEIRO</button>
+                    <button type="button" data-dismiss="modal" onclick="FinalizarPedido('Cartão de crédito')" class="btn btn-default btn-lg">CARTÃO DE CRÉDITO</button>
+                    <button type="button" data-dismiss="modal" onclick="FinalizarPedido('Cartão de débito')" class="btn btn-default btn-lg">CARTÃO DE DÉBITO</button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -89,4 +98,13 @@
 
     </div>
 </div>
+
+
+
+
+
+
+
+
+
 

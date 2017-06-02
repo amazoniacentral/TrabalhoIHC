@@ -35,7 +35,8 @@ function GravarLogin() {
 function Sair() {
     ///SAIR (REMOVER SESSÃO)
     sessionStorage.removeItem('logado');
-    sessionStorage.removeItem('lista');
+    sessionStorage.removeItem('listaCarrinho');
+    sessionStorage.removeItem('listaPedido');
     sessionStorage.removeItem('forma');
     window.location.href = "Index.html";
 }
@@ -50,11 +51,10 @@ function AcessoRestrito()
 }
 
 
-function CalcularValor()
+function CalcularValor(id)
 {
-    var list = CarregarPedido();
     var total = 0;
-    $(list).find("> li").each(function () {
+    $(id).find("li").each(function () {
         var valor = Number($(this).attr('data-value'));
         if (!isNaN(valor)) {
             total += valor;
@@ -63,44 +63,82 @@ function CalcularValor()
     return "R$ " + total.toFixed(2);
 }
 
-function CarregarPedido()
+function CarregarCarrinho()
 {
-    var s = sessionStorage.getItem('lista');
+    var s = sessionStorage.getItem('listaCarrinho');
+    var list = "<ul  class='list-group text-center'><b>Nenhum</b> produto no carrinho</ul>";
     if (s!=null) {
-        var list = "<ul  class='list-group'>" + s + "</ul>";
-        //var total = 0;
-        //$(list).find("> li").each(function () {
-        //    total++;
-        //    $(this).setAttribute("data-id", total);
-        //});
-        return list;
+        list = "<ul  class='list-group'>" + s + "</ul>";
+        $("#btnFinalizarPedido").html("<button onclick='$(valFinal).html(CalcularValor(listaCarrinho))' type='button' class='btn btn-success btn-lg btn-block' data-toggle='modal' data-target='#myModal'>Finalizar pedido</button>");
     }
-    return "<ul  class='list-group text-center'><b>Nenhum</b> produto foi encontrado</ul>";
+    else {
+        $("#btnFinalizarPedido").html("");
+    }
+    $("#listaCarrinho").html(list);
+    $("#valorCarrinho").html(CalcularValor("#listaCarrinho"));
 }
 
-function SelecionarPeido(produto, valor, idResultado, idCalcularValor)
+function CarregarPedido() {
+    var s = sessionStorage.getItem('listaPedido');
+    var list = "<ul  class='list-group text-center'>Você ainda <b>Não fez</b> pedido</ul>";
+    if (s != null) {
+        list = "<ul  class='list-group'>" + s + "</ul>";
+    }
+    $("#listaPedido").html(list);
+    $("#valorPedido").html(CalcularValor("#listaPedido"));
+    $("#listaPedido button").remove();
+}
+
+function FinalizarPedido(formaDePagamento) {
+    var s = sessionStorage.getItem('listaCarrinho');
+    var p = sessionStorage.getItem('listaPedido');
+    if (s != null) {
+        if (p != null) {
+            p += s;
+        }
+        else {
+            p = s;
+        }
+        sessionStorage.setItem('listaPedido', p);
+        sessionStorage.setItem('forma', formaDePagamento);
+        sessionStorage.removeItem('listaCarrinho');
+    }
+    CarregarCarrinho();
+    CarregarPedido();
+    getFormaPagamento();
+}
+
+function getFormaPagamento()
 {
-    var s = sessionStorage.getItem('lista');
+    var valor = CalcularValor("#listaPedido");
+    var m = sessionStorage.getItem('forma');
+    if (m!=null) {
+        $("#formaPagamento").html("Forma de pagamento: <span class='text-danger'>" + m + "</span> " + valor);
+    }    
+}
+
+function AdicionarProduto(produto, valor)
+{
+    var s = sessionStorage.getItem('listaCarrinho');
     if (s==null) {
-        s = "<li data-value=" + valor + " class='list-group-item'>" + produto + "<span class='pull-right'><b>R$ " + valor + "</b> <button type='button' class='btn btn-danger btn-xs'>X</button></span></li>";
+        s = "<li data-value=" + valor + " class='list-group-item'>" + produto + "<span class='pull-right'><b>R$ " + valor + "</b> <button type='button' onclick='RemoverProduto(this)' class='btn btn-danger btn-xs'>X</button></span></li>";
     }
     else
     {
-        s = s + "<li data-value=" + valor + " class='list-group-item'>" + produto + "<span class='pull-right'><b>R$ " + valor + "</b> <button type='button' class='btn btn-danger btn-xs'>X</button></span></li>";
+        s = s + "<li data-value=" + valor + " class='list-group-item'>" + produto + "<span class='pull-right'><b>R$ " + valor + "</b> <button type='button' onclick='RemoverProduto(this)' class='btn btn-danger btn-xs'>X</button></span></li>";
     }
-    sessionStorage.setItem('lista', s);
-    document.getElementById(idResultado).innerHTML = CarregarPedido();
-    document.getElementById(idCalcularValor).innerHTML = CalcularValor();
+    sessionStorage.setItem('listaCarrinho', s);
+    CarregarCarrinho();
+    $("#valorCarrinho").html(CalcularValor("#listaCarrinho"));
 }
 
-function RemoverProduto(produto, valor)
-{
-    var list = CarregarPedido();
-    var total = 0;
-    $(list).find("> li").each(function () {
-        var valor = Number($(this).attr('data-value'));
-        if (!isNaN(valor)) {
-            total += valor;
-        }
+function RemoverProduto(item) {
+    var index = $(item).closest('li');
+    index.remove();    
+    var s = "";
+    $("#listaCarrinho").find("li").each(function () {
+        s = $(this).closest('ul').html();
     });
+    sessionStorage.setItem('listaCarrinho', s);
+    $("#valorCarrinho").html(CalcularValor("#listaCarrinho"));
 }

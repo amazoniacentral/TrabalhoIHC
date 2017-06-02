@@ -10,10 +10,12 @@
     <script src="Scripts/Site.js"></script>    
 </head>
 <body>
-    <div class="container">        
-        <button type="button" onclick="Sair();" class="btn btn-link btn-lg">Sair</button>
-        <div class="pull-right">
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Finalizar pedido</button>
+    <div class="container"> 
+        <div class="col-md-12">
+            <span class="h4" id="formaPagamento"></span>
+            <div class="pull-right">
+                <button type="button" onclick="Sair();" class="btn btn-link">Sair</button>
+            </div>
         </div>
         <span id ="forma"></span>
     </div>
@@ -45,7 +47,7 @@
                                     </p>
                                     A receita leva somente torrada, alho, pimenta, azeite, sal, tomate e manjericão,.
                                     <div>
-                                        <button onclick="SelecionarPeido('Bruschetta', '25.00', 'listaPedido', 'valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="AdicionarProduto('Bruschetta', '25.00')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 25,00</span>
                                             <span>
@@ -71,7 +73,7 @@
                                     </p>
                                     A receita salsa, pão de forma sem casca, vinagre balsâmico, alho, queijo parmesão, anchovas, gotas de tabasco e Azeite.
                                     <div>
-                                        <button onclick="SelecionarPeido('Carpaccio', '30.40', 'listaPedido', 'valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="AdicionarProduto('Carpaccio', '30.40')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 30.40</span>
                                             <span>
@@ -97,7 +99,7 @@
                                     </p>
                                     Prato feito com comigda geral, arooz, feijão, carne, macarrão e salada.
                                     <div>
-                                        <button onclick="SelecionarPeido('Prato feito','14.98', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="AdicionarProduto('Prato feito', '14.98')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 14,98</span>
                                             <span>
@@ -123,7 +125,7 @@
                                     </p>
                                     Massa batata servida com molho bolanhesa. 
                                     <div>
-                                        <button onclick="SelecionarPeido('Gnocchi', '35.83', 'listaPedido', 'valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="AdicionarProduto('Gnocchi', '35.83')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 35,83</span>
                                             <span>
@@ -152,7 +154,7 @@
                                     </p>
                                     Descrição mínima do da bebida com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Coca-cola','3.45', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="AdicionarProduto('Coca-cola', '3.45')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 3,45</span>
                                             <span>
@@ -178,7 +180,7 @@
                                     </p>
                                     Descrição mínima do da bebida com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Pepsi','2.49', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="AdicionarProduto('Pepsi', '2.49')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 2,49</span>
                                             <span>
@@ -204,7 +206,7 @@
                                     </p>
                                     Descrição mínima do da bebida com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Tonica','1.28', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="AdicionarProduto('Tonica', '1.28')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 1,28</span>
                                             <span>
@@ -234,7 +236,7 @@
                                     </p>
                                     Descrição mínima do lanche com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Hamburger','13.56', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="AdicionarProduto('Hamburger', '13.56')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 13,56</span>
                                             <span>
@@ -260,7 +262,7 @@
                                     </p>
                                     Descrição mínima do lanche com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Lanche 3','9.51', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="AdicionarProduto('Lanche 3', '9.51')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 9,51</span>
                                             <span>
@@ -286,7 +288,7 @@
                                     </p>
                                     Descrição mínima do lanche com algo que chame a atenção do cliente
                                     <div>
-                                        <button onclick="SelecionarPeido('Gelatto','6.28', 'listaPedido','valor')" type="button" class="btn btn-default">Pedir</button>
+                                        <button onclick="AdicionarProduto('Gelatto', '6.28')" type="button" class="btn btn-default">Pedir</button>
                                         <div class="pull-right">
                                             <span class="h3">R$ 6,28</span>
                                             <span>
@@ -309,8 +311,19 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <legend>
+                        <span>CARRINHO</span>
+                        <span class="pull-right" id="valorCarrinho"></span>
+                    </legend>
+<div id="btnFinalizarPedido"></div>
+                    <div id="btnFinalizarPedido"></div>
+                    <div id="listaCarrinho"></div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <legend>
                         <span>PEDIDO</span>
-                        <span class="pull-right" id="valor"></span>
+                        <span class="pull-right" id="valorPedido"></span>
                     </legend>
                     <div id="listaPedido"></div>
                 </div>
@@ -325,24 +338,11 @@
     function lerPagina() {
         selecionarOpcao(1)
         AcessoRestrito();
-        getFormaDePagamento();
-        document.getElementById('listaPedido').innerHTML = CarregarPedido();
+        CarregarCarrinho();
+        CarregarPedido();
+        getFormaPagamento();
     }
-
-    function getFormaDePagamento() {
-        document.getElementById('valor').innerHTML = CalcularValor();
-        var m = sessionStorage.getItem('forma');
-        if (m != null) {
-            document.getElementById('forma').innerHTML = "Forma de pagamento: <span class='text-danger'>" + m + "</span>";
-        }        
-    }
-
-    function pagamento(i) {
-        sessionStorage.setItem('forma', i);
-        getFormaDePagamento();
-        //window.location.href = "Pedido.html";
-    }
-
+        
     function selecionarOpcao(id)
     {
         $("#refeicao").hide();
@@ -384,9 +384,10 @@
             </div>
             <div class="modal-body">
                 <div class="text-center">
-                    <button type="button" data-dismiss="modal" onclick="pagamento('Dinheiro')" class="btn btn-default btn-lg">DINHEIRO</button>
-                    <button type="button" data-dismiss="modal" onclick="pagamento('Cartão de crédito')" class="btn btn-default btn-lg">CARTÃO DE CRÉDITO</button>
-                    <button type="button" data-dismiss="modal" onclick="pagamento('Cartão de débito')" class="btn btn-default btn-lg">CARTÃO DE DÉBITO</button>
+                    <p class="h3" id="valFinal">Valor final</p>
+                    <button type="button" data-dismiss="modal" onclick="FinalizarPedido('Dinheiro')" class="btn btn-default btn-lg">DINHEIRO</button>
+                    <button type="button" data-dismiss="modal" onclick="FinalizarPedido('Cartão de crédito')" class="btn btn-default btn-lg">CARTÃO DE CRÉDITO</button>
+                    <button type="button" data-dismiss="modal" onclick="FinalizarPedido('Cartão de débito')" class="btn btn-default btn-lg">CARTÃO DE DÉBITO</button>
                 </div>
             </div>
             <div class="modal-footer">
