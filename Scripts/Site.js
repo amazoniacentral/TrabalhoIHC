@@ -67,12 +67,12 @@ function CarregarCarrinho()
 {
     var s = sessionStorage.getItem('listaCarrinho');
     var list = "<ul  class='list-group text-center'><b>Nenhum</b> produto no carrinho</ul>";
-    if (s!=null) {
+    if (s!=null && s!="") {
         list = "<ul  class='list-group'>" + s + "</ul>";
         $("#btnFinalizarPedido").html("<button onclick='$(valFinal).html(CalcularValor(listaCarrinho))' type='button' class='btn btn-success btn-lg btn-block' data-toggle='modal' data-target='#myModal'>Finalizar pedido</button>");
     }
     else {
-        $("#btnFinalizarPedido").html("");
+        $("#btnFinalizarPedido").html(" ");
     }
     $("#listaCarrinho").html(list);
     $("#valorCarrinho").html(CalcularValor("#listaCarrinho"));
@@ -81,7 +81,7 @@ function CarregarCarrinho()
 function CarregarPedido() {
     var s = sessionStorage.getItem('listaPedido');
     var list = "<ul  class='list-group text-center'>Você ainda <b>Não fez</b> pedido</ul>";
-    if (s != null) {
+    if (s != null && s!="") {
         list = "<ul  class='list-group'>" + s + "</ul>";
     }
     $("#listaPedido").html(list);
@@ -140,5 +140,6 @@ function RemoverProduto(item) {
         s = $(this).closest('ul').html();
     });
     sessionStorage.setItem('listaCarrinho', s);
+    CarregarCarrinho();
     $("#valorCarrinho").html(CalcularValor("#listaCarrinho"));
 }
