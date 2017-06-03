@@ -10,14 +10,55 @@
     <script src="Scripts/Site.js"></script>
 </head>
 <body> 
-    <div class="container">
-        <button type="button" onclick="AbrirCamera();" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Realizar pedido</button>
-    </div> 
-  
+        <div class="navbar-wrapper">
+            <div class="container-fluid">
+                <nav class="navbar navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="Index.html">PAVAROTTI RISTORANT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>    
+        <div class="container body-content">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div style="min-height:150px;">
+                                        <button style="min-height:100px; margin-top:20%;" data-toggle='modal' data-target='#myModal' onclick="AbrirCamera();" type="button" class="btn btn-lg btn-primary btn-block">CARDÁPIO</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="panel">
+                                        <div class="panel-body">
+                                            <legend class="text-center small">INFORMAÇÕES</legend>
+                                            <p>
+                                                <span class="h1">P</span>ara realizar um pedido basta clicar <b><a href="#" data-toggle='modal' data-target='#myModal' onclick="AbrirCamera(); return false;">aqui</a></b> e aproximar a câmera para ler o código QR Code, assim identificaremos sua posição no restaurante.
+                                            </p>
+                                            <p>No cardápio basta escolher o produto e pedir quantos quiser. Quando terminar de escolher pode finalizar o pedido que logo será entregue. Aproveite!.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <legend></legend>
+            <footer>
+                &copy; 2017 - Pavarotti Ristorant<span>. Todos direitos reservados.</span>
+            </footer>
+        </div>
 </body>
 </html>
-
-
 
 
 
@@ -41,11 +82,20 @@
     </div>
 </div>
 <script>
+    ///Iniciar verificação de câmera junto com a página
+    window.onload = iniciar();
     function leuQr()
     {
         GravarLogin();
         window.location.href = "Pedido.html";
     }
 
+    function iniciar()
+    {
+        var s = EstaLogado();
+        if (s == 'sim') {
+            window.location.href = "Pedido.html";
+        }
+    }
 
 </script>
