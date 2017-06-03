@@ -10,53 +10,83 @@
     <script src="Scripts/Site.js"></script>
 </head>
 <body>
-    
-    <div class="container">
-        <div class="col-md-8 col-sm-12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <legend class="text-center">PRATO FEITO</legend>
-                    <img style="max-height:350px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
+    <div class="navbar-wrapper">
+        <div class="container-fluid">
+            <nav class="navbar navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="Index.html">PAVAROTTI RISTORANT</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="pull-right">
+            <span class="h4" id="formaPagamento"></span>
+            <button type="button" onclick="Sair();" class="btn btn-default btn-sm">Sair</button>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
                     <div class="panel-body">
-                        Comercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto texto
-                        <div class="pull-right">
-                            <span class="h2">R$ 14,58</span>
-                            <span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </span>
+                        <legend class="text-center">PRATO FEITO</legend>
+                        <img style="max-height:350px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
+                        <div class="panel-body">
+                            Comercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto texto
+                            <div class="pull-right">
+                                <span class="h2">R$ 14,58</span>
+                                <span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </span>
+                            </div>
+                            <legend></legend>
+                            <a href="Pedido.html">Voltar para cardápio</a>
+                            <button onclick="AdicionarProduto('Prato feito',14.58)" type="button" class="btn btn-default pull-right">Pedir</button>
                         </div>
-                        <legend></legend>
-                        <a href="Pedido.html">Voltar</a>
-                        <button onclick="AdicionarProduto('Prato feito',14.58)" type="button" class="btn btn-default pull-right">Pedir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-md-12 col-sm-6 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <legend>
+                                    <span>CARRINHO</span>
+                                    <span class="pull-right" id="valorCarrinho"></span>
+                                </legend>
+                                <div id="btnFinalizarPedido"></div>
+                                <div id="listaCarrinho"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-6 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <legend>
+                                    <span>PEDIDO</span>
+                                    <span class="pull-right" id="valorPedido"></span>
+                                </legend>
+                                <div id="listaPedido"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <legend>
-                        <span>CARRINHO</span>
-                        <span class="pull-right" id="valorCarrinho"></span>
-                    </legend>
-                    <div id="btnFinalizarPedido"></div>
-                    <div id="listaCarrinho"></div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <legend>
-                        <span>PEDIDO</span>
-                        <span class="pull-right" id="valorPedido"></span>
-                    </legend>
-                    <div id="listaPedido"></div>
-                </div>
-            </div>
-        </div>
+        <legend></legend>
+        <footer>
+            &copy; 2017 - Pavarotti Ristorant<span>. Todos direitos reservados.</span>
+        </footer>
     </div>
 </body>
 </html>
