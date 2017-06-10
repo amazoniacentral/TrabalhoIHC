@@ -143,3 +143,5 @@ function RemoverProduto(item) {
     CarregarCarrinho();
     $("#valorCarrinho").html(CalcularValor("#listaCarrinho"));
 }
+
+

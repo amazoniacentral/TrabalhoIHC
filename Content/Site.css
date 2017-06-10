@@ -1,5 +1,5 @@
 ﻿body{
-    padding-top: 90px;
+    padding-top: 100px;
     padding-bottom: 20px;
     background: #ededed;
 }
@@ -46,14 +46,14 @@ a:hover {
 /*Definir a cor da letra do menu*/
 .navbar a, .dropdown-menu>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .navbar-toggle{
  color: #fff;
- border-bottom: 10px solid transparent;
-  border-top:10px solid transparent;
- font-size:24px;
+ border-bottom: 4px solid transparent;
+  border-top:4px solid transparent;
+ font-size:21px;
 }
 
 .nav>li>a:focus, .nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
-  border-bottom: 10px solid transparent;
-  border-top:10px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-top:4px solid transparent;
   background:none;
 }
 
