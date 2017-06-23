@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trabalho IHC</title>
-    <link href="Content/grayscale.min.css" rel="stylesheet" />
+    <link href="Content/grayscale.css" rel="stylesheet" />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
@@ -13,22 +13,7 @@
     <script src="Scripts/grayscale.min.js"></script>
 </head>
 <body id="inicio" data-spy="scroll" data-target=".navbar-fixed-top">
-    <!--<div class="navbar-wrapper">
-        <div class="container-fluid">
-            <nav class="navbar navbar-fixed-top">
-                <div class="container">
-                    <div class="navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <a href="Index.html">PAVAROTTI RISTORANT</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>-->
-
+    
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -47,13 +32,10 @@
                         <a href="#inicio"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#sobrenos" > Sobre Nós </a>
+                        <a class="page-scroll" href="#sobre">Sobre</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#"> Equipe</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#">Luciano Pavarotti</a>
+                        <a class="page-scroll" href="#equipe">Equipe</a>
                     </li>
                 </ul>
             </div>
@@ -62,18 +44,14 @@
         <!-- /.container -->
     </nav>
 
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
 
+                        <div class="row">
 
-
-    <div class="container body-content">
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-
-                <div class="panel">
-                    <div class="panel-body">
-                        <div class="row">                            
-                                
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <legend class="text-center small">INFORMAÇÕES</legend>
@@ -84,93 +62,90 @@
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div style="min-height:150px;">
-                                        <button style="min-height:100px; margin-top:20%;" data-toggle='modal' data-target='#myModal' onclick="AbrirCamera();" type="button" class="btn btn-lg btn-primary btn-block">CARDÁPIO</button>
+                                        <button style="min-height:100px; margin-top:20%;" data-toggle='modal' data-target='#myModal' onclick="AbrirCamera();" type="button" class="btn btn-lg btn-success btn-block">CARDÁPIO</button>
 
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
+                        
                     </div>
                 </div>
-<!-- ##SEGUNDO PANEL QUE GUARDA INFORMAÇÕES SOBRE NÓS  -->
-     
-                   <div  class="panel"  >
-                    <div   class="panel-body" id="sobrenos"  >
-                        <div   class="row">                            
-                                
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="col-md-6 col-sm-6 col-xs-12" >
-                                                                      
-                                    
-                                    
-                                    <center> <h2 style="color:gray" > Sobre Nós </h2> </center>
-<p>
-O Pavarotti Ristorante Italiano, o estabelecimento com que o chef César Ramasotti reinterpretou a comida tradicional da Itália, foi eleito um dos melhores restaurantes do mundo na lista 50 Best Restaurant.
-Buscamos realmente estabelecer um contato especial com clientes em nossos restaurantes, através da calorosa hospitalidade pela qual a Itália é conhecida, todas as semanas, com este espírito, servimos mais de 3.3 milhões de clientes.
-Oferecemos deliciosos pratos simples, com ingredientes frescos, cartas de vinhos premiados e outras bebidas, em um ambiente caseiro e aconchegante.
-</p>    
-     
-                                      <center> <h3> VOLTADA A FUNCIONÁRIOS </h1> </center>
-<p> 
-O Pavarotti Ristorante Italiano muito de seu sucesso ao contínuo treinamento e desenvolvimento de seus funcionários, através de programas que lhes oferecem recompensas e que reconhecem seu alto desempenho. Um desses programas é a viagem à Itália, que dura uma semana e oferece formação e treinamento em vinhos para determinados funcionários.
-</p>
-                                            <center> <h3> Pavarotti </h2> </center>
-<p>
-Dono de uma voz inconfundível e de uma figura carismática, o tenor italiano Luciano Pavarotti conquistou multidões e ganhou respeito internacional, Filho de um padeiro, Pavarotti nasceu na cidade de Modena. Interessava-se tanto pela música como pelo futebol, mas o primeiro lugar em um concurso de canto o levou a escolher a carreira que o tornou célebre. Junto com os amigos Plácido Domingo e José Carreras formou os Três Tenores, trio que se apresentou em mais de 30 concertos de 1990 a 2003. Luciano Pavarotti faleceu em Modena, na Itália, no dia 6 de setembro de 2007.
-No fim adiciona a imagem do pavarotti
-
-</p>
-
-                <center> <img  src="Imagens/pavarotti.jpg" alt="pavarotti empresa" width="300" height="220"> </center> 
-
- </p>
-                                </div>
-                               
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
-
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="Imagens/slide1.JPG" alt="...">
-                        </div>
-                        <div class="item">
-                            <img src="Imagens/slide2.JPG" alt="...">
-                        </div>
-                        <div class="item">
-                            <img src="Imagens/slide3.JPG" alt="...">
-                        </div>
-                    </div>
-
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>-->
-
             </div>
-<!-- FIM PANEL GUARDA INFORMAÇÕES SOBRE NÓS-->
-
         </div>
-        <legend></legend>
-        <footer>
-            &copy; 2017 - Pavarotti Ristorant<span>. Todos direitos reservados.</span>
-        </footer>
-    </div>
+    </header>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="content-section">
+        <div class="conteudo-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <img src="Content/Upload/logo01.jpg" class="center-block img-responsive" />
+                        <h1 class="empresaTitulo text-center"> PAVAROTTI RISTORANTE </h1>
+                        <p>É uma empresa do ramo alimentício que tem como missão alcançar todo interior do estado de Rôndonia</p>
+                        <h2> Valores </h2>
+                        <p> Credibildidade, Cordibilidade, Seriedade </p>
+
+                        <p>
+                            O Pavarotti Ristorante Italiano, é um estabelecimento que reinterpretou a comida tradicional da Itália. Buscamos estabelecer um contato especial com clientes em nossos restaurantes. Oferecemos deliciosos pratos simples, com ingredientes frescos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe" class="content-section">
+        <div class="conteudo-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+
+                        <h2 class="text-center">Equipe</h2>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <img src="Content/Upload/foto_perfil.jpg" style="max-height:150px;" class="img-responsive img-circle center-block" />
+                                <h4 class="text-center">Antônio Francisco</h4>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <img src="Content/Upload/foto_perfil.jpg" style="max-height:150px;" class="img-responsive img-circle center-block" />
+                                <h4 class="text-center">Daniel Ramalho</h4>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <img src="Content/Upload/foto_perfil.jpg" style="max-height:150px;" class="img-responsive img-circle center-block" />
+                                <h4 class="text-center">Francisco Silva</h4>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <img src="Content/Upload/foto_perfil.jpg" style="max-height:150px;" class="img-responsive img-circle center-block" />
+                                <h4 class="text-center">Marcelo Fernandes</h4>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <img src="Content/Upload/foto_perfil.jpg" style="max-height:150px;" class="img-responsive img-circle center-block" />
+                                <h4 class="text-center">Wesley Hariel</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="rodape" class="content-section">
+        <div class="conteudo-section">
+            <div class="container">
+                <legend></legend>
+                <footer>
+                    &copy; 2017 - Pavarotti Ristorant<span>. Todos direitos reservados.</span>
+                </footer>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 </body>
 </html>
 
@@ -207,3 +182,4 @@ No fim adiciona a imagem do pavarotti
     }
 
 </script>
+

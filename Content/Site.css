@@ -35,7 +35,7 @@ video{
 /*Definir links*/
 a:link, a:visited, a:active {
 	text-decoration: none;
-    color:#4e5a65;
+    color:#ff5e00;
 	}
 a:hover {
 	text-decoration: none; 
@@ -48,7 +48,7 @@ a:hover {
  color: #fff;
  border-bottom: 4px solid transparent;
   border-top:4px solid transparent;
- font-size:21px;
+ font-size:18px;
 }
 
 .nav>li>a:focus, .nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
@@ -78,4 +78,6 @@ float: none !important;
 .navbar .navbar-collapse {
 text-align: center;
 }
-
+.empresaTitulo {
+    color:#d30000;
+}
