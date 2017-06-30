@@ -113,7 +113,8 @@ a:focus {
   }
   .navbar-custom.top-nav-collapse {
     padding: 0;
-    background:#ff5e00;
+    /*background:#ff5e00;*/
+    background-color:red;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
@@ -251,7 +252,7 @@ a:focus {
   .content-section {
     padding-top: 250px;
   }
-  .download-section {
+  .conteudo-section {
     padding: 100px 0;
   }
   #map {

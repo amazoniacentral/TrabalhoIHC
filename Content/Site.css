@@ -28,14 +28,14 @@ video{
 
     /*Cor do menu*/
 .navbar, .dropdown-menu{
-    background: #ff5e00;
+    background: #d30000;
     border: none;
 }
 
 /*Definir links*/
 a:link, a:visited, a:active {
 	text-decoration: none;
-    color:#ff5e00;
+    color:red;
 	}
 a:hover {
 	text-decoration: none; 

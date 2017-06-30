@@ -38,6 +38,7 @@ function Sair() {
     sessionStorage.removeItem('listaCarrinho');
     sessionStorage.removeItem('listaPedido');
     sessionStorage.removeItem('forma');
+    RemoveDetalhes();
     window.location.href = "Index.html";
 }
 
@@ -144,4 +145,48 @@ function RemoverProduto(item) {
     $("#valorCarrinho").html(CalcularValor("#listaCarrinho"));
 }
 
+function RemoveDetalhes()
+{
+    sessionStorage.removeItem('titulo');
+    sessionStorage.removeItem('valor');
+    sessionStorage.removeItem('detalhes');
+    sessionStorage.removeItem('imagem');
+}
+
+
+function SetDetalhes(item){
+    var index = $(item).offsetParent("div")
+    var imagem = index.find("img")[0].src;
+
+    var titulo = index.find("b a").html();
+    var detalhes = index.find("div p").html();
+    var valor = index.find("button").attr("onclick").replace(" ", "").indexOf(",") + 2;
+    valor = index.find("button").attr("onclick").replace(" ", "").substring(valor, valor + 5);
+    sessionStorage.setItem('titulo', titulo);
+    sessionStorage.setItem('valor', valor);
+    sessionStorage.setItem('imagem', imagem);
+    sessionStorage.setItem('detalhes', detalhes);
+}
+
+function GetDetalhes() {
+    
+    try {
+        $("#titulo").html(sessionStorage.getItem('titulo'));
+        $("#imagem").attr("src", sessionStorage.getItem('imagem'))
+        $("#detalhes").html(sessionStorage.getItem('detalhes'));
+        var valor = Number(sessionStorage.getItem('valor').replace("'", ""));
+        if (!isNaN(valor)) {
+            $("#preco").val(valor.toFixed(2));
+            $("#valor").html("R$ " + valor.toFixed(2));
+        }
+        else {
+            $("#preco").val("00.00");
+            $("#valor").html("R$ 00,00");
+        }
+    }
+    catch(e)
+    {
+        $("#completo").html("<p class='text-center'><b>Nenhum</b> produto foi encontrado</p>")
+    }
+}
 

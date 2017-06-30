@@ -31,288 +31,313 @@
             <button type="button" onclick="Sair();" class="btn btn-default btn-sm">Sair</button>
         </div>        
         <div class="row">            
-            <div class="col-md-8 col-sm-12 col-xs-12">
+            <div class="col-md-8 col-sm-12 col-xs-12">                
+                <div>Você está aqui <b>>> <a href="Index.html">Home</a>/Pedido</b></div>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <legend class="text-center">CARDÁPIO</legend>
-                        <div class="col-md-8 col-sm-8 col-xs-12">
-                            <b>Selecione </b>um tipo
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <select onchange="selecionarOpcao($(this).val())" class="form-control">
-                                <option value="1">Refeição</option>
-                                <option value="2">Bebidas</option>
-                                <option value="3">Lanche</option>
-                            </select>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12" id="refeicao">
-                            <legend class="small"><b>Refeições</b></legend>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="panel panel-default">
-                                        <a href="Detalhes.html">
-                                            <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/bruschetta.jpg" />
-                                        </a>
-                                        <div class="panel-body">
-                                            <p>
-                                                <a href="Detalhes.html" class="h4">Bruschetta</a>
-                                            </p>
-                                            A receita leva somente torrada, alho, pimenta, azeite, sal, tomate e manjericão,.
-                                            <div>
-                                                <button onclick="AdicionarProduto('Bruschetta', '25.00')" type="button" class="btn btn-default">Pedir</button>
-                                                <div class="pull-right">
-                                                    <span class="h3">R$ 25,00</span>
-                                                    <span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                    </span>
+                        <div class="row">
+                            <legend class="text-center">CARDÁPIO</legend>
+                            <div class="col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-12">
+                                <div class="input-group">
+                                    <div class="input-group-addon">Selecione um tipo</div>
+                                    <select onchange="selecionarOpcao($(this).val())" class="form-control">
+                                        <option value="1">Refeição</option>
+                                        <option value="2">Bebidas</option>
+                                        <option value="3">Lanche</option>
+                                        <option value="4">Todos</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="refeicao">
+                                <legend class="small"><b>Refeições</b></legend>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <a href="Detalhes.html" onclick="SetDetalhes(this);">
+                                                <img style="max-height:150px;" class="img-responsive center-block" src="Content/Upload/bruschetta.jpg" />
+                                            </a>
+                                            <div class="panel-body">
+
+                                                <b>
+                                                    <a href="Detalhes.html" onclick="SetDetalhes(this);" class="h4">Bruschetta</a>
+                                                </b>
+                                                <p>
+                                                    A receita leva somente torrada, alho, pimenta, azeite, sal, tomate e manjericão.
+                                                </p>
+                                                <div>
+                                                    <button onclick="AdicionarProduto('Bruschetta', '25.00')" type="button" class="btn btn-default">Pedir</button>
+                                                    <div class="pull-right">
+                                                        <span class="h3">R$ 25,00</span>
+                                                        <span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="panel panel-default">
-                                        <a href="Detalhes.html">
-                                            <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/carpaccio.jpg" />
-                                        </a>
-                                        <div class="panel-body">
-                                            <p>
-                                                <a href="Detalhes.html" class="h4">Carpaccio</a>
-                                            </p>
-                                            A receita salsa, pão de forma sem casca, vinagre balsâmico, alho, queijo parmesão, anchovas, gotas de tabasco e Azeite.
-                                            <div>
-                                                <button onclick="AdicionarProduto('Carpaccio', '30.40')" type="button" class="btn btn-default">Pedir</button>
-                                                <div class="pull-right">
-                                                    <span class="h3">R$ 30.40</span>
-                                                    <span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                    </span>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <a href="Detalhes.html" onclick="SetDetalhes(this);">
+                                                <img style="max-height:150px; " class="img-responsive center-block" src="Content/Upload/carpaccio.jpg" />
+                                            </a>
+                                            <div class="panel-body">
+                                                <b>
+                                                    <a href="Detalhes.html" onclick="SetDetalhes(this);" class="h4">Carpaccio</a>
+                                                </b>
+                                                <p>
+                                                    A receita salsa, pão de forma sem casca, vinagre balsâmico, alho, queijo parmesão, anchovas, gotas de tabasco e Azeite.
+                                                </p>
+                                                <div>
+                                                    <button onclick="AdicionarProduto('Carpaccio', '30.40')" type="button" class="btn btn-default">Pedir</button>
+                                                    <div class="pull-right">
+                                                        <span class="h3">R$ 30.40</span>
+                                                        <span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="panel panel-default">
-                                        <a href="Detalhes.html">
-                                            <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
-                                        </a>
-                                        <div class="panel-body">
-                                            <p>
-                                                <a href="Detalhes.html" class="h4">Prato Feiro</a>
-                                            </p>
-                                            Prato feito com comigda geral, arooz, feijão, carne, macarrão e salada.
-                                            <div>
-                                                <button onclick="AdicionarProduto('Prato feito', '14.98')" type="button" class="btn btn-default">Pedir</button>
-                                                <div class="pull-right">
-                                                    <span class="h3">R$ 14,98</span>
-                                                    <span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                    </span>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <a href="Detalhes.html" onclick="SetDetalhes(this);">
+                                                <img style="max-height:150px; " class="img-responsive center-block" src="Content/Upload/refeicao.jpg" />
+                                            </a>
+                                            <div class="panel-body">
+                                                <b>
+                                                    <a href="Detalhes.html" onclick="SetDetalhes(this);" class="h4">Prato Feiro</a>
+                                                </b>
+                                                <p>
+                                                    Prato feito com comigda geral, arroz, feijão, carne, macarrão e salada.
+                                                </p>
+                                                <div>
+                                                    <button onclick="AdicionarProduto('Prato feito', '14.98')" type="button" class="btn btn-default">Pedir</button>
+                                                    <div class="pull-right">
+                                                        <span class="h3">R$ 14,98</span>
+                                                        <span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="panel panel-default">
-                                        <a href="Detalhes.html">
-                                            <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/gnocchi-300x199.jpg" />
-                                        </a>
-                                        <div class="panel-body">
-                                            <p>
-                                                <a href="Detalhes.html" class="h4">Gnocchi</a>
-                                            </p>
-                                            Massa batata servida com molho bolanhesa.
-                                            <div>
-                                                <button onclick="AdicionarProduto('Gnocchi', '35.83')" type="button" class="btn btn-default">Pedir</button>
-                                                <div class="pull-right">
-                                                    <span class="h3">R$ 35,83</span>
-                                                    <span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                    </span>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <a href="Detalhes.html" onclick="SetDetalhes(this);">
+                                                <img style="max-height:150px; " class="img-responsive center-block" src="Content/Upload/gnocchi-300x199.jpg" />
+                                            </a>
+                                            <div class="panel-body">
+                                                <b>
+                                                    <a href="Detalhes.html" onclick="SetDetalhes(this);" class="h4">Gnocchi</a>
+                                                </b>
+                                                <p>
+                                                    Massa batata servida com molho bolanhesa.
+                                                </p>
+                                                <div>
+                                                    <button onclick="AdicionarProduto('Gnocchi', '35.83')" type="button" class="btn btn-default">Pedir</button>
+                                                    <div class="pull-right">
+                                                        <span class="h3">R$ 35,83</span>
+                                                        <span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12" id="bebidas">
-                            <legend class="small"><b>Bebidas</b></legend>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="panel panel-default">
-                                        <a href="Detalhes.html">
-                                            <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/cocacolalata.jpg" />
-                                        </a>
-                                        <div class="panel-body">
-                                            <p>
-                                                <a href="Detalhes.html" class="h4">Coca-cola</a>
-                                            </p>
-                                            Descrição mínima do da bebida com algo que chame a atenção do cliente
-                                            <div>
-                                                <button onclick="AdicionarProduto('Coca-cola', '3.45')" type="button" class="btn btn-default">Pedir</button>
-                                                <div class="pull-right">
-                                                    <span class="h3">R$ 3,45</span>
-                                                    <span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                    </span>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="bebidas">
+                                <legend class="small"><b>Bebidas</b></legend>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <a href="Detalhes.html" onclick="SetDetalhes(this);">
+                                                <img style="max-height:150px; " class="img-responsive center-block" src="Content/Upload/cocacolalata.jpg" />
+                                            </a>
+                                            <div class="panel-body">
+                                                <b>
+                                                    <a href="Detalhes.html" onclick="SetDetalhes(this);" class="h4">Coca-cola</a>
+                                                </b>
+                                                <p>
+                                                    Refrigerante Coca-Cola Lata 350 ml
+                                                </p>
+                                                <div>
+                                                    <button onclick="AdicionarProduto('Coca-cola', '3.45')" type="button" class="btn btn-default">Pedir</button>
+                                                    <div class="pull-right">
+                                                        <span class="h3">R$ 3,45</span>
+                                                        <span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="panel panel-default">
-                                        <a href="Detalhes.html">
-                                            <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/pepsi-lata-350-ml_600x600-PU61d72_1.jpg" />
-                                        </a>
-                                        <div class="panel-body">
-                                            <p>
-                                                <a href="Detalhes.html" class="h4">Pepsi</a>
-                                            </p>
-                                            Descrição mínima do da bebida com algo que chame a atenção do cliente
-                                            <div>
-                                                <button onclick="AdicionarProduto('Pepsi', '2.49')" type="button" class="btn btn-default">Pedir</button>
-                                                <div class="pull-right">
-                                                    <span class="h3">R$ 2,49</span>
-                                                    <span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                    </span>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <a href="Detalhes.html" onclick="SetDetalhes(this);">
+                                                <img style="max-height:150px; " class="img-responsive center-block" src="Content/Upload/pepsi-lata-350-ml_600x600-PU61d72_1.jpg" />
+                                            </a>
+                                            <div class="panel-body">
+                                                <b>
+                                                    <a href="Detalhes.html" onclick="SetDetalhes(this);" class="h4">Pepsi</a>
+                                                </b>
+                                                <p>
+                                                    Refrigerante Pepsi Lata 350 ml
+                                                </p>
+                                                <div>
+                                                    <button onclick="AdicionarProduto('Pepsi', '2.49')" type="button" class="btn btn-default">Pedir</button>
+                                                    <div class="pull-right">
+                                                        <span class="h3">R$ 2,49</span>
+                                                        <span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="panel panel-default">
-                                        <a href="Detalhes.html">
-                                            <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/tonica.jpg" />
-                                        </a>
-                                        <div class="panel-body">
-                                            <p>
-                                                <a href="Detalhes.html" class="h4">Tonica</a>
-                                            </p>
-                                            Descrição mínima do da bebida com algo que chame a atenção do cliente
-                                            <div>
-                                                <button onclick="AdicionarProduto('Tonica', '1.28')" type="button" class="btn btn-default">Pedir</button>
-                                                <div class="pull-right">
-                                                    <span class="h3">R$ 1,28</span>
-                                                    <span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                    </span>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <a href="Detalhes.html" onclick="SetDetalhes(this);">
+                                                <img style="max-height:150px; " class="img-responsive center-block" src="Content/Upload/tonica.jpg" />
+                                            </a>
+                                            <div class="panel-body">
+                                                <b>
+                                                    <a href="Detalhes.html" onclick="SetDetalhes(this);" class="h4">Tonica</a>
+                                                </b>
+                                                <p>
+                                                    Água Tônica ANTARCTICA Diet Lata 350ml
+                                                </p>
+                                                <div>
+                                                    <button onclick="AdicionarProduto('Tonica', '1.28')" type="button" class="btn btn-default">Pedir</button>
+                                                    <div class="pull-right">
+                                                        <span class="h3">R$ 1,28</span>
+                                                        <span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12" id="lanches">
-                            <legend class="small"><b>Lanches</b></legend>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="panel panel-default">
-                                        <a href="Detalhes.html">
-                                            <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/lanche.jpg" />
-                                        </a>
-                                        <div class="panel-body">
-                                            <p>
-                                                <a href="Detalhes.html" class="h4">Hamburger</a>
-                                            </p>
-                                            Descrição mínima do lanche com algo que chame a atenção do cliente
-                                            <div>
-                                                <button onclick="AdicionarProduto('Hamburger', '13.56')" type="button" class="btn btn-default">Pedir</button>
-                                                <div class="pull-right">
-                                                    <span class="h3">R$ 13,56</span>
-                                                    <span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                    </span>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="lanches">
+                                <legend class="small"><b>Lanches</b></legend>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <a href="Detalhes.html" onclick="SetDetalhes(this);">
+                                                <img style="max-height:150px; " class="img-responsive center-block" src="Content/Upload/lanche.jpg" />
+                                            </a>
+                                            <div class="panel-body">
+                                                <b>
+                                                    <a href="Detalhes.html" onclick="SetDetalhes(this);" class="h4">Hamburger</a>
+                                                </b>
+                                                <p>
+                                                    O hambúrguer é uma espécie de carne moída, temperada com cebola, salsa, mostarda etc.
+                                                </p>
+                                                <div>
+                                                    <button onclick="AdicionarProduto('Hamburger', '13.56')" type="button" class="btn btn-default">Pedir</button>
+                                                    <div class="pull-right">
+                                                        <span class="h3">R$ 13,56</span>
+                                                        <span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="panel panel-default">
-                                        <a href="Detalhes.html">
-                                            <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/lanche 3.jpg" />
-                                        </a>
-                                        <div class="panel-body">
-                                            <p>
-                                                <a href="Detalhes.html" class="h4">Lanche 3</a>
-                                            </p>
-                                            Descrição mínima do lanche com algo que chame a atenção do cliente
-                                            <div>
-                                                <button onclick="AdicionarProduto('Lanche 3', '9.51')" type="button" class="btn btn-default">Pedir</button>
-                                                <div class="pull-right">
-                                                    <span class="h3">R$ 9,51</span>
-                                                    <span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                    </span>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <a href="Detalhes.html" onclick="SetDetalhes(this);">
+                                                <img style="max-height:150px; " class="img-responsive center-block" src="Content/Upload/lanche 3.jpg" />
+                                            </a>
+                                            <div class="panel-body">
+                                                <b>
+                                                    <a href="Detalhes.html" onclick="SetDetalhes(this);" class="h4">Lanche 3</a>
+                                                </b>
+                                                <p>
+                                                    Descrição mínima do lanche com algo que chame a atenção do cliente
+                                                </p>
+                                                <div>
+                                                    <button onclick="AdicionarProduto('Lanche 3', '9.51')" type="button" class="btn btn-default">Pedir</button>
+                                                    <div class="pull-right">
+                                                        <span class="h3">R$ 9,51</span>
+                                                        <span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="panel panel-default">
-                                        <a href="Detalhes.html">
-                                            <img style="max-height:150px; width:auto" class="center-block" src="Content/Upload/gelatto-300x200.jpg" />
-                                        </a>
-                                        <div class="panel-body">
-                                            <p>
-                                                <a href="Detalhes.html" class="h4">Gelatto</a>
-                                            </p>
-                                            Descrição mínima do lanche com algo que chame a atenção do cliente
-                                            <div>
-                                                <button onclick="AdicionarProduto('Gelatto', '6.28')" type="button" class="btn btn-default">Pedir</button>
-                                                <div class="pull-right">
-                                                    <span class="h3">R$ 6,28</span>
-                                                    <span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                                    </span>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <a href="Detalhes.html" onclick="SetDetalhes(this);">
+                                                <img style="max-height:150px; " class="img-responsive center-block" src="Content/Upload/gelatto-300x200.jpg" />
+                                            </a>
+                                            <div class="panel-body">
+                                                <b>
+                                                    <a href="Detalhes.html" onclick="SetDetalhes(this);" class="h4">Gelatto</a>
+                                                </b>
+                                                <p>
+                                                    De fabricação artesanal, os gelatos tradicionais possuem menos ar em sua composição
+                                                </p>
+                                                <div>
+                                                    <button onclick="AdicionarProduto('Gelatto', '6.28')" type="button" class="btn btn-default">Pedir</button>
+                                                    <div class="pull-right">
+                                                        <span class="h3">R$ 6,28</span>
+                                                        <span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -387,6 +412,15 @@
             {
                 if (id==3) {
                     $("#lanches").show();
+                }
+                else
+                {
+                    if(id==4)
+                    {
+                        $("#refeicao").show();
+                        $("#bebidas").show();
+                        $("#lanches").show();
+                    }
                 }
             }
         }

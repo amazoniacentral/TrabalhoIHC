@@ -30,27 +30,45 @@
             <span class="h4" id="formaPagamento">Bem vindo! Faça o pedido</span>
             <button type="button" onclick="Sair();" class="btn btn-default btn-sm">Sair</button>
         </div>
-        <div class="row">
+        <div class="row">            
             <div class="col-md-8 col-sm-12 col-xs-12">
+                <div>Você está aqui <b>>> <a href="Index.html">Home</a>/<a href="Pedido.html">Pedido</a>/Detalhes</b></div>
                 <div class="panel panel-default">
-                    <div class="panel-body">
-                        <legend class="text-center">PRATO FEITO</legend>
-                        <img style="max-height:350px; width:auto" class="center-block" src="Content/Upload/refeicao.jpg" />
+                    <div class="panel-body" id="completo">
+                        <input type="hidden" id="preco" />
+                        <legend class="text-center" id="titulo">PRATO FEITO</legend>
+                        <img style="max-height:350px;" id="imagem" class="img-responsive center-block" src="Content/Upload/refeicao.jpg" />
                         <div class="panel-body">
-                            Comercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto textoComercial, prato comercial, prato feito ou PF é um prato típico da culinária brasileira. Consiste em arroz, feijão, algum tipo de carne, salada e batatas fritas. texto textotexto textotexto textotexto textotexto texto
-                            <div class="pull-right">
-                                <span class="h2">R$ 14,58</span>
-                                <span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </span>
+                            <div class="row">
+                                <p id="detalhes"></p>
+                                <p>Texto explicativo do ítem de pedido detalhando todas as informações do produto tais como ingredientes e detalhar o máximo possível para que o cliente fique ciente do que está pedindo.</p><p>Detalhar todos os ingredientes para evitar que algum cliente que tenha algum tipo de alergia por exemplo peça algo que não possa comer e assim por diante</p>
+                                <ul>
+                                    <li>Ingrediente 1</li>
+                                    <li>Ingrediente 2</li>
+                                    <li>Ingrediente 3</li>
+                                    <li>Ingrediente 4</li>
+                                    <li>Ingrediente 5</li>
+                                    <li>Ingrediente 6</li>
+                                    <li>Ingrediente 7</li>
+                                    <li>Ingrediente 8</li>
+                                </ul>
+                                <p>
+                                    Detalhar tudo que for possível assim dando todas as informações necessárias que o cliente precisar
+                                </p>
+                                <div class="pull-right">
+                                    <span class="h2" id="valor">R$ 14,58</span>
+                                    <span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </span>
+                                </div>
+                                <legend></legend>
+                                <a href="Pedido.html">Voltar para cardápio</a>
+                                <button onclick="AdicionarProduto($(titulo).text(), $(preco).val())" type="button" class="btn btn-default pull-right">Pedir</button>
                             </div>
-                            <legend></legend>
-                            <a href="Pedido.html">Voltar para cardápio</a>
-                            <button onclick="AdicionarProduto('Prato feito',14.58)" type="button" class="btn btn-default pull-right">Pedir</button>
                         </div>
                     </div>
                 </div>
@@ -96,6 +114,7 @@
     function iniciar()
     {
         AcessoRestrito();
+        GetDetalhes();
         CarregarCarrinho();
         CarregarPedido();
         getFormaPagamento();
